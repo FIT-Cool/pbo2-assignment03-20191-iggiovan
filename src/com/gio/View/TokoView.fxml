@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gio.Controller.TokoController">
+   <top>
+      <HBox>
+         <children>
+            <MenuBar BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#categoryForm" text="Show Category Manager" />
+                        <MenuItem mnemonicParsing="false" onAction="#exit" text="Close">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="X" control="UP" meta="UP" shift="ANY" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox>
+         <children>
+            <AnchorPane prefHeight="399.0" prefWidth="600.0" BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox layoutX="5.0" layoutY="156.0">
+                     <children>
+                        <TableView fx:id="tabToko" layoutX="5.0" layoutY="156.0" prefHeight="245.0" prefWidth="600.0" tableMenuButtonVisible="true" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="cID" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="cName" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="cCategory" prefWidth="75.0" text="Category" />
+                              <TableColumn fx:id="cExpDate" prefWidth="75.0" text="Expired Date" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="5.0" layoutY="5.0">
+                     <children>
+                        <GridPane layoutX="5.0" layoutY="5.0" prefHeight="142.0" prefWidth="600.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="129.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="471.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="ID" />
+                              <Label text="Name" GridPane.rowIndex="1" />
+                              <Label text="Category" GridPane.rowIndex="2" />
+                              <Label text="Expired Date" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtId" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="comboCategory" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="dateExp" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <HBox alignment="BOTTOM_RIGHT" fillHeight="false" minWidth="-Infinity" prefHeight="34.0" prefWidth="471.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.vgrow="NEVER">
+                                 <children>
+                                    <Button fx:id="save" mnemonicParsing="false" onAction="#btnSave" text="Save" />
+                                    <Button fx:id="reset" mnemonicParsing="false" onAction="#btnReset" text="Reset" />
+                                    <Button fx:id="update" mnemonicParsing="false" onAction="#btnUpdate" text="Update" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
